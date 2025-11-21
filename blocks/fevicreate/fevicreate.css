@@ -1,0 +1,390 @@
+.home{
+    padding: 100px 0;
+    background-image: url("../../icons/login-back.jpg");
+}
+
+main > .home{
+    margin: 0;
+}
+
+.home .home-bottom-content .home-paragraph .home-picture img {
+    position: absolute;
+    content: "";
+    bottom: 10%;
+    left: 4%;
+    width: 95px;    
+    height: 110px;
+    animation: anim-name 2s infinite;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+@keyframes anim-name {
+    0% {
+    transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home .home-header-logos .home-paragraph:nth-child(1) .home-picture {
+  display: flex;
+  justify-content: center;
+}
+
+.home .home-header-logos .home-paragraph:nth-child(2) .home-picture {
+    position: absolute;
+    content: "";
+    top: 0%;
+    right: 4%;
+    width: 90px;
+    height: 81px;
+    animation-duration: 1s;
+    animation-delay: 100ms;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding: 100px 0 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale3d(1.04, 1.04, 1.04);
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+
+}
+
+.home .home-cards-wrapper .cards{
+    width: 100%;
+    margin: auto;
+}
+
+.home .home-cards-wrapper .cards ul{
+    display: flex;
+    justify-content: center;
+
+}
+
+.home .home-cards-wrapper .cards ul .home-card-item {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 8px 0 29px #00000024;
+    padding: 33px 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    .cards-card-image .home-picture {    
+        img {
+            width: 87px;
+            height: 96px;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .home-card-body {
+        margin: 0;
+    }
+
+    .home-card-body p{
+        font-family: "Baloo Bhaina 2", cursive;
+        line-height: 1.1;
+        font-weight: 500;
+        color: #111;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        padding-top: 20px;
+        transition: color 0.3s ease;
+    }
+}
+
+.home .home-cards-wrapper .cards ul .home-card-item::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #40acf7;
+    z-index: 13;
+    transition: all 0.5s ease;
+}
+
+.home .home-cards-wrapper .cards ul .home-card-item:hover::before {
+    width: 100%;
+}
+
+.home .home-cards-wrapper .cards ul .home-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 5px 35px #00000035;
+}
+
+.home .home-cards-wrapper .cards ul .home-card-item:hover .cards-card-image .home-picture img {
+    transform: scale(1.1);
+}
+
+.home .home-cards-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 0 58px;
+    flex-direction: column;
+    max-width: 1140px;
+}
+
+.home .home-cards-wrapper:nth-child(2) {
+    border-bottom: 1px solid #fff;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large Tablets and Small Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .home {
+        padding: 80px 0;
+    }
+
+    .home .home-cards-wrapper {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item {
+        width: 32%;
+        padding: 25px 0;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .cards-card-image .home-picture img {
+        width: 75px;
+        height: 82px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .home-card-body p {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .home {
+        padding: 60px 0;
+    }
+
+    .home .home-header-logos .home-paragraph:nth-child(1) .home-picture img {
+        width: 140px;
+        height: auto;
+    }
+
+    .home .home-header-logos .home-paragraph:nth-child(2) .home-picture {
+        width: 70px;
+        height: 63px;
+        right: 2%;
+        padding: 80px 0 0;
+    }
+
+    .home .home-cards-wrapper {
+        padding: 0 0 40px;
+        margin-top: 30px;
+    }
+
+    .home .home-cards-wrapper .cards ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item {
+        width: 45%;
+        padding: 20px 0;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .cards-card-image .home-picture img {
+        width: 70px;
+        height: 77px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .home-card-body p {
+        font-size: 17px;
+        padding-top: 12px;
+    }
+
+    .home .home-bottom-content .home-paragraph .home-picture img {
+        width: 80px;
+        height: 90px;
+        left: 2%;
+    }
+
+    @keyframes anim-name {
+        0% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(60px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .home {
+        padding: 40px 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .home .home-header-logos .home-paragraph:nth-child(1) .home-picture img {
+        width: 110px;
+        height: auto;
+    }
+
+    .home .home-header-logos .home-paragraph:nth-child(2) .home-picture {
+        width: 55px;
+        height: 48px;
+        right: 3%;
+        top: 5%;
+        padding: 40px 0 0;
+    }
+
+    .home .home-cards-wrapper {
+        padding: 0 0 30px;
+        margin-top: 25px;
+        max-width: 95%;
+    }
+
+    .home .home-cards-wrapper .cards ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item {
+        width: 100%;
+        padding: 18px 0;
+        margin-bottom: 10px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .cards-card-image .home-picture img {
+        width: 65px;
+        height: 72px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .home-card-body p {
+        font-size: 16px;
+        padding-top: 10px;
+    }
+
+    .home .home-bottom-content .home-paragraph .home-picture img {
+        width: 65px;
+        height: 73px;
+        left: 3%;
+        bottom: 5%;
+    }
+
+    @keyframes anim-name {
+        0% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(40px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Small Mobile Devices (max-width: 360px) */
+@media (max-width: 360px) {
+    .home {
+        padding: 30px 0;
+    }
+
+    .home .home-header-logos .home-paragraph:nth-child(1) .home-picture img {
+        width: 95px;
+        height: auto;
+    }
+
+    .home .home-header-logos .home-paragraph:nth-child(2) .home-picture {
+        width: 48px;
+        height: 42px;
+        right: 2%;
+        padding: 30px 0 0;
+    }
+
+    .home .home-cards-wrapper {
+        padding: 0 0 20px;
+        margin-top: 20px;
+    }
+
+    .home .home-cards-wrapper .cards ul {
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item {
+        padding: 15px 0;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .cards-card-image .home-picture img {
+        width: 55px;
+        height: 61px;
+    }
+
+    .home .home-cards-wrapper .cards ul .home-card-item .home-card-body p {
+        font-size: 15px;
+        padding-top: 8px;
+    }
+
+    .home .home-bottom-content .home-paragraph .home-picture img {
+        width: 55px;
+        height: 62px;
+        left: 2%;
+    }
+
+    @keyframes anim-name {
+        0% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(30px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
