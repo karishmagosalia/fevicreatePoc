@@ -1,4 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import fev from '../fevicreate/fevicreate.js';
 
 export default function decorate(block) {
   /* change to ul, li */
@@ -14,4 +15,5 @@ export default function decorate(block) {
   });
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.replaceChildren(ul);
+  fev();
 }

@@ -66,7 +66,7 @@ export default function decorate(block) {
 
     // Check if we're on the homepage and should redirect
     const currentPath = window.location.pathname;
-    const isHomePage = currentPath === '/' || currentPath === '/fevicreate/fevicreatepoc/' || currentPath.endsWith('/fevicreate/fevicreatepoc');
+    const isHomePage = currentPath === '/' || currentPath === '/index.html';
     
     if (isHomePage && homeSection) {
         const storedSelection = window.getUserSelection();
@@ -137,7 +137,7 @@ export default function decorate(block) {
                 item.style.cursor = 'pointer';
                 item.addEventListener('click', function () {
                     const cardText = cardBody ? cardBody.textContent.trim().toLowerCase() : '';
-                    let targetUrl = '/fevicreate/fevicreatepoc/home';
+                    let targetUrl = '/home';
                     let queryParam = '';
 
                     // Define query parameters based on card content
@@ -184,9 +184,8 @@ export default function decorate(block) {
     }
     // Hide header and footer only for the exact page, not child pages
     const pathname = window.location.pathname;
-    const isExactPage = pathname === '/fevicreate/fevicreatepoc/' || 
-                        pathname === '/fevicreate/fevicreatepoc' ||
-                        pathname === '/fevicreate/fevicreatepoc/index.html';
+    const isExactPage = pathname === '/' || 
+                        pathname === '/index.html';
     
     if (isExactPage) {
         const header = document.querySelector('header');
