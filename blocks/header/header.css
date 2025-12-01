@@ -98,8 +98,7 @@ header nav[aria-expanded='true'] {
     overflow: visible;
   }
 }
-
-header nav p {
+header nav ul li{
   margin: 0;
   line-height: 1;
   color: #fff;
@@ -107,6 +106,14 @@ header nav p {
   font-size: 18px;
   font-family: "Baloo Bhaina 2", cursive;
 }
+/* header nav p {
+  margin: 0;
+  line-height: 1;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Baloo Bhaina 2", cursive;
+} */
 
 header nav a:any-link {
   color: currentcolor;
@@ -205,6 +212,10 @@ header .nav-brand {
 header nav .nav-brand img {
   width: 128px;
   height: auto;
+}
+
+header nav p{
+  margin: 0;
 }
 
 /* sections */

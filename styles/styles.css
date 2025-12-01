@@ -305,10 +305,6 @@ main .search-component{
         @media (max-width:800px) {
           display: none;
         }
-        p{
-          margin: 0;
-          padding: 0;
-        }
       }
       > li:nth-child(2), > li:nth-child(3){
         width: 385px;
@@ -316,37 +312,39 @@ main .search-component{
         background: #fff;
         color: #111;
         font-size: 16px;
-        padding: 0;
+        padding: 0 0 0 63px;
         border-radius: 30px;
         display: inline-flex;
         box-shadow: 0 3px 7px #0000002e;
         position: relative;
         cursor: pointer;
+        align-items: center;
+        transition: background-image 0.3s ease;
         @media (max-width:1100px){
           width: 220px;
         }
-        > p{
-          width: 100%;
-          padding: 0 0 0 63px;
-          margin: 0;
-          font-size: 16px;
-          cursor: pointer;
-          transition: background-image 0.3s ease;
-          align-items: center;
-          display: flex;
-          &::before{
-            content: '';
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            left: 15px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            animation-duration: 1s;
-            animation-delay: 100ms;
-            animation-iteration-count: infinite;
-            animation-name: pulse;
+        @media (max-width:450px){
+          font-size: 14px;
+          padding: 0 0 0 47px;
+        }
+        @media (max-width:350px){
+          font-size: 10px;
+        }
+        &::before{
+          content: '';
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          left: 15px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          animation-duration: 1s;
+          animation-delay: 100ms;
+          animation-iteration-count: infinite;
+          animation-name: pulse;
+          @media (max-width:450px) {
+            width: 30px;
           }
         }
         > ul{
@@ -406,20 +404,8 @@ main .search-component{
           border-bottom-left-radius: 10px;
           border-top-left-radius: 10px;
         }
-        p{
-          @media (max-width:450px){
-            font-size: 14px;
-            padding: 0 0 0 47px;
-          }
-          @media (max-width:350px){
-            font-size: 10px;
-          }
-        }
-        > p::before{
+        &::before{
           background-image: url('/icons/group3.png');
-          @media (max-width:450px) {
-            width: 30px;
-          }
         }
       }
       > li:nth-child(3){
@@ -429,20 +415,11 @@ main .search-component{
           box-shadow: none;
           border-left: 1px solid #ccc;
         }
-        p{
-          @media (max-width:450px){
-            font-size: 14px;
-            padding: 0 0 0 47px;
-          }
-          @media (max-width:350px){
-            font-size: 12px;
-          }
+        @media (max-width:350px){
+          font-size: 12px;
         }
-        > p::before{
+        &::before{
           background-image: url('/icons/group1.png');
-          @media (max-width:450px) {
-            width: 30px;
-          }
         }
       }
       > li:nth-child(4){
@@ -452,12 +429,12 @@ main .search-component{
         padding: 0 20px 0 54px;
         height: 49px;
         border-radius: 30px;
-        display: inline-block;
         text-transform: uppercase;
         font-weight: 600;
         line-height: 54px;
         justify-content: center;
         display: flex;
+        align-items: center;
         position: relative;
         &::before {
           content: '';
@@ -481,13 +458,8 @@ main .search-component{
           background: #fff url('../icons/search.svg') no-repeat center;
           background-size: 24px;
           margin: 0;
-          p {
-            display: none;
-          }
-        }
-        p{
-          margin: 0;
-          padding: 0;
+          font-size: 0;
+          text-indent: -9999px;
         }
       }
     }
@@ -1190,31 +1162,28 @@ main .events-section{
                 width: calc(100% - 360px);
                 float: left;
                 position: relative;
+                background: #07bfd7;
+                justify-content: center;
+                display: flex;
+                padding: 9px 30px;
+                color: #fff;
+                height: 36px;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                border-radius: 6px;
                 @media (max-width: 1100px) {
                   width: auto;
-                }
-                p{
-                  display: inline-block;
-                  background: #07bfd7;
-                  padding: 9px 30px;
-                  color: #fff;
-                  height: 36px;
-                  font-size: 16px;
-                  font-weight: 500;
-                  text-transform: uppercase;
-                  border-radius: 6px;
-                  float: right;
-                  display: flex;
-                  align-items: center;
-                }
+                }  
               }
             }
-          }
           }
         }
       }
     }
   }
+}
 
 main .events-section::after{
   position: absolute;

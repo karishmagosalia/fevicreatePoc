@@ -778,16 +778,6 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
-
-  // Load fevicreate functionality for home section
-  const homeSection = doc.querySelector('.section.home');
-  if (homeSection) {
-    import('../blocks/fevicreate/fevicreate.js').then((module) => {
-      if (module.default) {
-        module.default(homeSection);
-      }
-    });
-  }
 }
 
 /**

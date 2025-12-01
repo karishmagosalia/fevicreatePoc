@@ -366,12 +366,22 @@
 
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
+      // Get all ul elements to identify which section we're in
+      const allUls = navSections.querySelectorAll(':scope .default-content-wrapper > ul');
+      
       navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
         const subList = navSection.querySelector('ul');
         const mainText = navSection.querySelector('p')?.textContent?.trim();
+        const hasLink = navSection.querySelector('a');
         
-        // Check if this is the search section
-        if (mainText && mainText.toLowerCase().includes('search')) {
+        // Determine which ul this li belongs to
+        const parentUl = navSection.parentElement;
+        const isInToolsSection = parentUl === allUls[1]; // Second ul is the tools section
+        
+        // Check if this is the search section - empty or minimal li in tools section
+        const isEmptyOrMinimal = (!mainText || mainText === '') && !hasLink && !subList;
+        
+        if (isEmptyOrMinimal && isInToolsSection) {
           // Replace with search input field
           navSection.classList.add('search-bar');
           navSection.innerHTML = `
@@ -426,7 +436,9 @@
           });
         } else if (subList) {
           // Check if this is an age-related dropdown
-          const isAgeDropdown = mainText && (mainText.includes('years') || mainText.includes('age'));
+          // Check both the main text and the full text content (including sublists)
+          const fullText = navSection.textContent || '';
+          const isAgeDropdown = fullText.includes('years') || fullText.includes('age');
 
           if (isAgeDropdown) {
             // Convert to select dropdown for age selection
