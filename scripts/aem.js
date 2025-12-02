@@ -520,9 +520,9 @@ function decorateSections(main) {
 }
 
 /**
- * Builds a block DOM Element from a two dimensional array, string, or object
- * @param {string} blockName name of the block
- * @param {*} content two dimensional array or string or object of content
+ * Gets placeholders object.
+ * @param {string} [prefix] Location of placeholders
+ * @returns {object} Window placeholders object
  */
 
 async function fetchPlaceholders(prefix = 'default') {
@@ -555,6 +555,12 @@ async function fetchPlaceholders(prefix = 'default') {
   }
   return window.placeholders[`${prefix}`];
 }
+
+/**
+ * Builds a block DOM Element from a two dimensional array, string, or object
+ * @param {string} blockName name of the block
+ * @param {*} content two dimensional array or string or object of content
+ */
 
 function buildBlock(blockName, content) {
   const table = Array.isArray(content) ? content : [[content]];
