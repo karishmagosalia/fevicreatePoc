@@ -970,7 +970,7 @@ main .feature-products{
 main .feature-products::after{
     position: absolute;
     content: "";
-    bottom: -120px;
+    bottom: -100px;
     left: 0;
     width: 100%;
     top: 99.99%;
